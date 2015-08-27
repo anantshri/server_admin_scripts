@@ -35,6 +35,8 @@ else
 	ls -lRt $PTH | grep $USR | egrep -v "^d|png|jpg|gif|doc|pdf|tif|jpeg|bmp|zip|pptx|docx|ppt|js|css|txt"
 	echo "######  wpscanapi check for issues #########"
 	python $WPSCANAPI --vuln --wordpress $PTH 2>/dev/null
+	echo "###### WP CORE UPDATE CHECK #################"
+	wp --path=$PTH core check-update
 	echo "######  wp plugin update pending  ###########"
 	wp --path=$PTH plugin list --fields=name,update,version | grep "available"
 	echo "#####  wp theme update pending  ###########"
