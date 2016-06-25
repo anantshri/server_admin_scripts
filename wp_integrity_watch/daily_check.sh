@@ -41,6 +41,9 @@ else
 	wp --path=$PTH plugin list --fields=name,update,version | grep "available"
 	echo "#####  wp theme update pending  ###########"
 	wp --path=$PTH theme list --fields=name,update,version | grep "available"
+	echo "#####  404 on repository checker #####"
+	wp --path=$PTH plugin list --fields=name | tr ' ' '\n' | grep -v "name" | xargs -L 1  -I {} curl -I -w "%{http_code} %{url_effective}\\n" https://wordpress.org/plugins/{}/ -o /dev/null 2>/dev/null | grep -v "200 "
+	wp --path=$PTH theme list --fields=name | tr ' ' '\n' | grep -v "name" | xargs -L 1  -I {} curl -I -w "%{http_code} %{url_effective}\\n" https://wordpress.org/themes/{}/ -o /dev/null 2>/dev/null | grep -v "200 "
 	echo "###### ADMIN USER LIST ##########"
 	wp --path=$PTH user list --role=administrator
 	echo "###### REPORT DONE #####"
