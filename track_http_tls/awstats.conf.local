@@ -1,0 +1,27 @@
+LogFormat = "%host %other %logname %time1 %methodurl %code %bytesd %refererquot %uaquot %extra1 %extra2" 
+
+
+ExtraSectionName1="HTTP Versions" 
+ExtraSectionCodeFilter1="200 301 302 404" 
+ExtraSectionCondition1="" 
+ExtraSectionFirstColumnTitle1="HTTP Versions" 
+ExtraSectionFirstColumnValues1="extra1,([^&]+)" 
+ExtraSectionFirstColumnFormat1="%s" 
+ExtraSectionStatTypes1=HL 
+ExtraSectionAddAverageRow1=0 
+ExtraSectionAddSumRow1=1 
+MaxNbOfExtra1=20 
+MinHitExtra1=1
+
+ExtraSectionName2="TLS Versions" 
+ExtraSectionCodeFilter2="200 301 302 404" 
+ExtraSectionCondition2="" 
+ExtraSectionFirstColumnTitle2="TLS Versions" 
+ExtraSectionFirstColumnValues2="extra2,([^&]+)" 
+ExtraSectionFirstColumnFormat2="%s" 
+ExtraSectionStatTypes2=HL 
+ExtraSectionAddAverageRow2=0 
+ExtraSectionAddSumRow2=1 
+MaxNbOfExtra2=20 
+MinHitExtra2=1
+
