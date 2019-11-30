@@ -1,7 +1,7 @@
 # fail2ban config files.
 
 ## mail-whois-shodan-lines.conf
-This configuration leverages the shodan api via https://github.com/anantshri/script-collection/blob/master/shodan_hostenum.py
+This configuration leverages the shodan api via https://github.com/anantshri/script-collection/blob/master/Python/shodan_hostenum.py
 So to get this working following steps are required
 
 1. Install shodan python api
